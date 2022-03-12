@@ -4,20 +4,14 @@ Object.preventExtensions(data);
 data.fill("Miguel", 4);
 
 
-data.forEach(function(v,i,clone){
-    console.log(i);
-});
-
-
-addEventListener("submit", function(e){
-    Array.from(e.target).forEach(element=>{
-        if(element.nodeName != "BUTTON"){
-            console.log(element.value);
-        }else{
-            console.log(element.dataset.envio);
-        }
-    })
-    e.preventDefault();
+let datos = data.map(function(v,i){
+    if(v == null){
+        return i+2;
+    }else{
+        return v;
+    }
 })
 
+console.log(data);
+console.log(datos);
 
